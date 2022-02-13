@@ -11,14 +11,17 @@ class FirstHundredGenerator:
         else:
             raise StopIteration()
 
-
-
-class FirstHundredIterable:
+    # 🔃
     def __iter__(self):
-        return FirstHundredGenerator()
+        return self
 
-print(sum(FirstHundredIterable()))
+# 🔃
+# No longer need this
+# class FirstHundredIterable:
+#     def __iter__(self):
+#         return FirstHundredGenerator()
 
-for i in FirstHundredIterable():
+print(sum(FirstHundredGenerator()))
+
+for i in FirstHundredGenerator():
     print(i)
-    
