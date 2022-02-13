@@ -25,3 +25,8 @@ print(sum(FirstHundredGenerator()))
 
 for i in FirstHundredGenerator():
     print(i)
+
+
+# Generator comprehension ()
+my_numbers_gen = (x for x in [1,2,3,4,5])
+print(next(my_numbers_gen))
