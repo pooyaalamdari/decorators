@@ -2,7 +2,7 @@ class FirstHundredGenerator:
     def __init__(self):
         self.number = 0
 
-# 🖇
+
     def __next__(self):
         if self.number < 100:
             current = self.number
@@ -12,8 +12,13 @@ class FirstHundredGenerator:
             raise StopIteration()
 
 
-my_gen = FirstHundredGenerator()
-print(my_gen.number)
-# 🖇
-next(my_gen)
-print(my_gen.number)
+
+class FirstHundredIterable:
+    def __iter__(self):
+        return FirstHundredGenerator()
+
+print(sum(FirstHundredIterable()))
+
+for i in FirstHundredIterable():
+    print(i)
+    
